@@ -2,15 +2,22 @@ package com.example.yourhealth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import android.util.Log
 
 class RegActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var passwordInput: EditText
+    private lateinit var togglePassword: ImageView
+    private var isPasswordVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,12 +28,18 @@ class RegActivity : AppCompatActivity() {
         val backButton = findViewById<Button>(R.id.backButton)
         val registerButton = findViewById<Button>(R.id.regButton)
         val emailInput = findViewById<EditText>(R.id.emailInput)
-        val passwordInput = findViewById<EditText>(R.id.passInput)
+        passwordInput = findViewById<EditText>(R.id.passInput)
+        togglePassword = findViewById<ImageView>(R.id.passIcon)
+
+        passwordInput.transformationMethod = PasswordTransformationMethod.getInstance()
+
+        togglePassword.setOnClickListener {
+            togglePasswordVisibility()
+        }
 
         backButton.setOnClickListener {
             finish()
         }
-
 
         registerButton.setOnClickListener {
             val email = emailInput.text.toString()
@@ -35,7 +48,7 @@ class RegActivity : AppCompatActivity() {
             if (email.isNotEmpty() && password.length >= 6) {
                 registerUser(email, password)
             } else {
-                Log.e("Register", "Помилка")
+                Toast.makeText(this, "Пароль повинен містити щонайменше 6 символів", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -43,13 +56,34 @@ class RegActivity : AppCompatActivity() {
         supportActionBar?.hide()
     }
 
+    private fun togglePasswordVisibility() {
+        if (isPasswordVisible) {
+            passwordInput.transformationMethod = PasswordTransformationMethod.getInstance()
+            togglePassword.setImageResource(R.drawable.eye_off)
+        } else {
+            passwordInput.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            togglePassword.setImageResource(R.drawable.eye)
+        }
+        isPasswordVisible = !isPasswordVisible
+        passwordInput.setSelection(passwordInput.text.length)
+    }
+
     private fun registerUser(email: String, password: String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Log.d("Register", "Успішна реєстрація")
-                    finish() // повернутись назад
+                    Toast.makeText(
+                        this,
+                        "Реєстрація успішна!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    finish()
                 } else {
+                    Toast.makeText(
+                        this,
+                        "Помилка реєстрації: ${task.exception?.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     Log.e("Register", "Помилка: ${task.exception?.message}")
                 }
             }
