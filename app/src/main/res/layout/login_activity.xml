@@ -115,7 +115,7 @@
             android:layout_height="24dp"
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/eye" />
+            android:src="@drawable/eye_off" />
     </RelativeLayout>
 
     <Button
