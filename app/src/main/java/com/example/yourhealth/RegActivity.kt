@@ -11,11 +11,13 @@ import android.widget.ImageView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import android.util.Log
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var passwordInput: EditText
+    private lateinit var confirmPasswordInput: EditText
     private lateinit var togglePassword: ImageView
     private var isPasswordVisible = false
 
@@ -28,7 +30,9 @@ class RegActivity : AppCompatActivity() {
         val backButton = findViewById<Button>(R.id.backButton)
         val registerButton = findViewById<Button>(R.id.regButton)
         val emailInput = findViewById<EditText>(R.id.emailInput)
+        val phoneInput = findViewById<EditText>(R.id.phoneInput)
         passwordInput = findViewById<EditText>(R.id.passInput)
+        confirmPasswordInput = findViewById<EditText>(R.id.confirmPassInput)
         togglePassword = findViewById<ImageView>(R.id.passIcon)
 
         passwordInput.transformationMethod = PasswordTransformationMethod.getInstance()
@@ -44,11 +48,22 @@ class RegActivity : AppCompatActivity() {
         registerButton.setOnClickListener {
             val email = emailInput.text.toString()
             val password = passwordInput.text.toString()
+            val confirmPassword = confirmPasswordInput.text.toString()
+            val phone = phoneInput.text.toString()
 
-            if (email.isNotEmpty() && password.length >= 6) {
-                registerUser(email, password)
+            if (email.isNotEmpty() && password.isNotEmpty() && confirmPassword.isNotEmpty() && phone.isNotEmpty()) {
+                if (password.length >= 6) {
+                    if (password == confirmPassword) {
+                        registerUser(email, password, phone)
+                    } else {
+                        Toast.makeText(this, "Пароль не підтверджено", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                else{
+                    Toast.makeText(this, "Пароль повинен містити щонайменше 6 символів", Toast.LENGTH_SHORT).show()
+                }
             } else {
-                Toast.makeText(this, "Пароль повинен містити щонайменше 6 символів", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Усі поля мають бути заповнені.", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -68,16 +83,29 @@ class RegActivity : AppCompatActivity() {
         passwordInput.setSelection(passwordInput.text.length)
     }
 
-    private fun registerUser(email: String, password: String) {
+    private fun registerUser(email: String, password: String, phone:String) {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(
-                        this,
-                        "Реєстрація успішна!",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    finish()
+                    val user = auth.currentUser
+                    val uid = user?.uid
+
+                    if (uid != null) {
+                        val db = FirebaseFirestore.getInstance()
+                        val userMap = hashMapOf(
+                            "email" to email,
+                            "phone" to phone
+                        )
+
+                        db.collection("users").document(uid).set(userMap)
+                            .addOnSuccessListener {
+                                Toast.makeText(this, "Реєстрація успішна!", Toast.LENGTH_SHORT).show()
+                                finish()
+                            }
+                            .addOnFailureListener { e ->
+                                Toast.makeText(this, "Помилка збереження у Firestore: ${e.message}", Toast.LENGTH_SHORT).show()
+                            }
+                    }
                 } else {
                     Toast.makeText(
                         this,

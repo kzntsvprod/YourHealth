@@ -41,7 +41,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -60,7 +59,7 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.firebase:firebase-auth:22.3.0")
-    implementation ("com.google.firebase:firebase-auth-ktx:22.3.1")
-    implementation ("com.google.firebase:firebase-analytics-ktx:21.5.0")
-
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.1")
+    implementation("com.google.firebase:firebase-analytics-ktx:21.5.0")
+    implementation("com.google.firebase:firebase-firestore-ktx:25.1.2")
 }
