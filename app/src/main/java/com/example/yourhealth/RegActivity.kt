@@ -1,5 +1,6 @@
 package com.example.yourhealth
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
@@ -100,6 +101,8 @@ class RegActivity : AppCompatActivity() {
                         db.collection("users").document(uid).set(userMap)
                             .addOnSuccessListener {
                                 Toast.makeText(this, "Реєстрація успішна!", Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, UserActivity::class.java)
+                                startActivity(intent)
                                 finish()
                             }
                             .addOnFailureListener { e ->

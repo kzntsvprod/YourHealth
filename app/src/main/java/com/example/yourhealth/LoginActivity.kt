@@ -78,6 +78,10 @@ class LoginActivity : AppCompatActivity() {
                         "Успішний вхід! Вітаємо!",
                         Toast.LENGTH_LONG
                     ).show()
+
+                    val intent = Intent(this, UserActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
                     Toast.makeText(
                         this,
