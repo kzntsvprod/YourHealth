@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/secondaryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/userLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Профіль користувача"
+        android:textColor="@color/black"
+        android:textSize="32sp" />
+
+    <LinearLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/nameLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="start"
+            android:text="Ім'я"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/nameInput"
+            android:layout_width="215dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:paddingRight="40dp"
+            android:inputType="textPersonName"
+            android:hint="Введіть ім'я"
+            android:textColorHint="#d6d7d7"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_semibold"
+            android:drawablePadding="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/surnameLayout"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/surnameLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Прізвище"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/surnameInput"
+            android:layout_width="215dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:paddingRight="40dp"
+            android:inputType="textPersonName"
+            android:hint="Введіть прізвище"
+            android:textColorHint="#d6d7d7"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_semibold"
+            android:drawablePadding="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thirdnameLayout"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/thirdnameLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="По батькові"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/thirdnameInput"
+            android:layout_width="215dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:paddingRight="40dp"
+            android:inputType="textPersonName"
+            android:hint="Введіть по батькові"
+            android:textColorHint="#d6d7d7"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_semibold"
+            android:drawablePadding="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/weightLayout"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/weightLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Вага (кг)"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/weightInput"
+            android:layout_width="215dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:paddingRight="40dp"
+            android:inputType="textPersonName"
+            android:hint="Введіть вагу"
+            android:textColorHint="#d6d7d7"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_semibold"
+            android:drawablePadding="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/heightLayout"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/heightLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="Зріст (см)"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/heightInput"
+            android:layout_width="215dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:paddingRight="40dp"
+            android:inputType="textPersonName"
+            android:hint="Введіть зріст"
+            android:textColorHint="#d6d7d7"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_semibold"
+            android:drawablePadding="10dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"/>
+
+    <Button
+        android:id="@+id/changeButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/white"
+        android:text="Змінити" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/white"
+        android:backgroundTint="#df3b42"
+        android:text="Назад" />
+
+
+</LinearLayout>
