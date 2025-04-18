@@ -81,7 +81,6 @@ class LoginActivity : AppCompatActivity() {
 
                     val intent = Intent(this, UserActivity::class.java)
                     startActivity(intent)
-                    finish()
                 } else {
                     Toast.makeText(
                         this,
