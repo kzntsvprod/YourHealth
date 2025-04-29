@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/secondaryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:background="@color/white"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:id="@+id/thirdLayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="end|center_vertical"
+            android:orientation="horizontal"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/profileIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="Профіль"
+                android:src="@drawable/user" />
+
+            <TextView
+                android:id="@+id/profileText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/inter"
+                android:text="Профіль"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/menuLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Меню"
+        android:textColor="@color/black"
+        android:textSize="32sp" />
+
+    <LinearLayout
+        android:id="@+id/calcBmrLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:id="@+id/calcBmrIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/bmr_calc"
+            android:contentDescription="ІМТ" />
+
+        <LinearLayout
+            android:id="@+id/calcBmrLayout2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/calcBmrLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
+                android:text="Калькулятор ІМТ"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/calcBmrButton"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_button"
+                android:backgroundTint="@color/blue"
+                android:minWidth="100dp"
+                android:text="ІМТ"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/reactionTestLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:id="@+id/reactionTestIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/react_test"
+            android:contentDescription="Реакція" />
+
+        <LinearLayout
+            android:id="@+id/reactionTestLayout2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/reactionTestLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Тест на реакцію"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter" />
+
+            <Button
+                android:id="@+id/reactionTestButton"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:text="Реакція"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/white"
+                android:minWidth="100dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pressureLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:id="@+id/pressureIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/pressure"
+            android:contentDescription="Тиск" />
+
+        <LinearLayout
+            android:id="@+id/pressureLayout2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/pressureLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Розрахунок тиску"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter" />
+
+            <Button
+                android:id="@+id/pressureButton"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:text="Тиск"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/white"
+                android:minWidth="100dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/calcHeartRateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:id="@+id/calcHeartRateIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/heartrate_calc"
+            android:contentDescription="Пульс" />
+
+        <LinearLayout
+            android:id="@+id/calcHeartRateLayout2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/calcHeartRateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Калькулятор ЧСС"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter" />
+
+            <Button
+                android:id="@+id/calcHeartRateButton"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:text="Пульс"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/white"
+                android:minWidth="100dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/calcCaloriesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_vertical|center_horizontal">
+
+        <ImageView
+            android:id="@+id/calcCaloriesIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/calories_calc"
+            android:contentDescription="Калорії" />
+
+        <LinearLayout
+            android:id="@+id/calcCaloriesLayout2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/calcCaloriesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Калькулятор калорій"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/inter" />
+
+            <Button
+                android:id="@+id/calcCaloriesButton"
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:text="Калорії"
+                android:backgroundTint="@color/blue"
+                android:textColor="@color/white"
+                android:minWidth="100dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="45dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/white"
+        android:backgroundTint="#df3b42"
+        android:text="Назад" />
+
+
+</LinearLayout>
