@@ -101,7 +101,7 @@ class RegActivity : AppCompatActivity() {
                         db.collection("users").document(uid).set(userMap)
                             .addOnSuccessListener {
                                 Toast.makeText(this, "Реєстрація успішна!", Toast.LENGTH_SHORT).show()
-                                val intent = Intent(this, UserActivity::class.java)
+                                val intent = Intent(this, MenuActivity::class.java)
                                 startActivity(intent)
                                 finish()
                             }
