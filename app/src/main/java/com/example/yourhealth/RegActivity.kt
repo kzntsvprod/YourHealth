@@ -20,7 +20,9 @@ class RegActivity : AppCompatActivity() {
     private lateinit var passwordInput: EditText
     private lateinit var confirmPasswordInput: EditText
     private lateinit var togglePassword: ImageView
+    private lateinit var toggleConfirmPassword: ImageView
     private var isPasswordVisible = false
+    private var isConfirmPasswordVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,11 +37,17 @@ class RegActivity : AppCompatActivity() {
         passwordInput = findViewById<EditText>(R.id.passInput)
         confirmPasswordInput = findViewById<EditText>(R.id.confirmPassInput)
         togglePassword = findViewById<ImageView>(R.id.passIcon)
+        toggleConfirmPassword = findViewById<ImageView>(R.id.confirmPassIcon)
 
         passwordInput.transformationMethod = PasswordTransformationMethod.getInstance()
+        confirmPasswordInput.transformationMethod = PasswordTransformationMethod.getInstance()
 
         togglePassword.setOnClickListener {
             togglePasswordVisibility()
+        }
+
+        toggleConfirmPassword.setOnClickListener {
+            toggleConfirmPasswordVisibility()
         }
 
         backButton.setOnClickListener {
@@ -82,6 +90,18 @@ class RegActivity : AppCompatActivity() {
         }
         isPasswordVisible = !isPasswordVisible
         passwordInput.setSelection(passwordInput.text.length)
+    }
+
+    private fun toggleConfirmPasswordVisibility() {
+        if (isConfirmPasswordVisible) {
+            confirmPasswordInput.transformationMethod = PasswordTransformationMethod.getInstance()
+            toggleConfirmPassword.setImageResource(R.drawable.eye_off)
+        } else {
+            confirmPasswordInput.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            toggleConfirmPassword.setImageResource(R.drawable.eye)
+        }
+        isConfirmPasswordVisible = !isConfirmPasswordVisible
+        confirmPasswordInput.setSelection(confirmPasswordInput.text.length)
     }
 
     private fun registerUser(email: String, password: String, phone:String) {
