@@ -41,10 +41,18 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val calcBmrButton = findViewById<Button>(R.id.calcBmrButton)
+
+        val goToBmrCalcActivity = View.OnClickListener {
+            val intent = Intent(this, BmrCalcActivity::class.java)
+            startActivity(intent)
+        }
+
         profileIcon.setOnClickListener(goToUserActivity)
         profileText.setOnClickListener(goToUserActivity)
         calcHeartRateButton.setOnClickListener(goToHeartRateCalcActivity)
         pressureButton.setOnClickListener(goToPressureCalcActivity)
+        calcBmrButton.setOnClickListener(goToBmrCalcActivity)
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         supportActionBar?.hide()
