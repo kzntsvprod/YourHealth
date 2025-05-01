@@ -27,8 +27,16 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val calcHeartRateButton = findViewById<Button>(R.id.calcHeartRateButton)
+
+        val goToHeartRateCalcActivity = View.OnClickListener {
+            val intent = Intent(this, HeartRateCalcActivity::class.java)
+            startActivity(intent)
+        }
+
         profileIcon.setOnClickListener(goToUserActivity)
         profileText.setOnClickListener(goToUserActivity)
+        calcHeartRateButton.setOnClickListener(goToHeartRateCalcActivity)
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         supportActionBar?.hide()
