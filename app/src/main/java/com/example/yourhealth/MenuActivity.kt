@@ -34,9 +34,17 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val pressureButton = findViewById<Button>(R.id.pressureButton)
+
+        val goToPressureCalcActivity = View.OnClickListener {
+            val intent = Intent(this, PressureCalcActivity::class.java)
+            startActivity(intent)
+        }
+
         profileIcon.setOnClickListener(goToUserActivity)
         profileText.setOnClickListener(goToUserActivity)
         calcHeartRateButton.setOnClickListener(goToHeartRateCalcActivity)
+        pressureButton.setOnClickListener(goToPressureCalcActivity)
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         supportActionBar?.hide()
