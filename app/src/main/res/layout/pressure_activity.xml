@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/secondaryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:background="@color/white"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:id="@+id/thirdLayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:gravity="end|center_vertical"
+            android:orientation="horizontal"
+            android:paddingEnd="16dp">
+
+            <ImageView
+                android:id="@+id/profileIcon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="Профіль"
+                android:src="@drawable/user" />
+
+            <TextView
+                android:id="@+id/profileText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/inter"
+                android:text="Профіль"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/pressureLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="Розрахунок тиску"
+        android:textColor="@color/black"
+        android:textSize="32sp" />
+
+    <LinearLayout
+        android:id="@+id/higherPressureLayout"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/higherPressureLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="start"
+            android:text="Верхній тиск"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/higherPressureInput"
+            android:layout_width="215dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:paddingRight="40dp"
+            android:inputType="textPersonName"
+            android:hint="Введіть верх. тиск"
+            android:textColorHint="#d6d7d7"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_semibold"
+            android:drawablePadding="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lowerPressureLayout"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/lowerPressureLabel"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="start"
+            android:text="Нижній тиск"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/lowerPressureInput"
+            android:layout_width="215dp"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:paddingRight="40dp"
+            android:inputType="textPersonName"
+            android:hint="Введіть ниж. тиск"
+            android:textColorHint="#d6d7d7"
+            android:textColor="@color/black"
+            android:fontFamily="@font/inter_semibold"
+            android:drawablePadding="10dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calcButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/white"
+        android:text="Розрахувати" />
+
+    <TextView
+        android:id="@+id/resLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:fontFamily="@font/inter"
+        android:text="Результат:"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/pressureInput"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/edit_text_bottom_border"
+        android:paddingRight="40dp"
+        android:inputType="text"
+        android:hint="Ваш тиск..."
+        android:textColorHint="#d6d7d7"
+        android:fontFamily="@font/inter_semibold"
+        android:textColor="@color/black"
+        android:drawablePadding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:cursorVisible="false"
+        android:longClickable="true"/>
+
+    <TextView
+        android:id="@+id/adviceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        android:fontFamily="@font/inter"
+        android:text="Поради:"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/adviceInput"
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/edit_text_bottom_border"
+        android:paddingRight="40dp"
+        android:inputType="text"
+        android:hint="Поради для даного тиску..."
+        android:textColorHint="#d6d7d7"
+        android:fontFamily="@font/inter_semibold"
+        android:textColor="@color/black"
+        android:drawablePadding="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:focusable="false"
+        android:cursorVisible="false"
+        android:longClickable="true"/>
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="@color/white"
+        android:backgroundTint="#df3b42"
+        android:text="Назад" />
+
+
+</LinearLayout>
