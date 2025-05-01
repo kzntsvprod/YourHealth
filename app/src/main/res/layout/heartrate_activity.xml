@@ -78,13 +78,13 @@
             android:layout_width="215dp"
             android:layout_height="50dp"
             android:background="@null"
-            android:paddingRight="40dp"
-            android:inputType="textPersonName"
-            android:hint="Введіть вік"
-            android:textColorHint="#d6d7d7"
-            android:textColor="@color/black"
+            android:drawablePadding="10dp"
             android:fontFamily="@font/inter_semibold"
-            android:drawablePadding="10dp" />
+            android:hint="Введіть вік"
+            android:inputType="number"
+            android:paddingRight="40dp"
+            android:textColor="@color/black"
+            android:textColorHint="#d6d7d7" />
     </LinearLayout>
 
     <LinearLayout
@@ -112,7 +112,7 @@
             android:layout_height="50dp"
             android:background="@null"
             android:paddingRight="40dp"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:hint="Введіть пульс"
             android:textColorHint="#d6d7d7"
             android:textColor="@color/black"
