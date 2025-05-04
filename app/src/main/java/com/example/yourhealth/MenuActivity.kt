@@ -48,11 +48,19 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val calcCaloriesButton = findViewById<Button>(R.id.calcCaloriesButton)
+
+        val goToCaloriesCalcActivity = View.OnClickListener {
+            val intent = Intent(this, CaloriesCalcActivity::class.java)
+            startActivity(intent)
+        }
+
         profileIcon.setOnClickListener(goToUserActivity)
         profileText.setOnClickListener(goToUserActivity)
         calcHeartRateButton.setOnClickListener(goToHeartRateCalcActivity)
         pressureButton.setOnClickListener(goToPressureCalcActivity)
         calcBmrButton.setOnClickListener(goToBmrCalcActivity)
+        calcCaloriesButton.setOnClickListener(goToCaloriesCalcActivity)
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         supportActionBar?.hide()
