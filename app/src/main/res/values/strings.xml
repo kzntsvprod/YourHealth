@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">YourHealth</string>
+
+    <string-array name="activity_levels">
+        <item>Мінімальна</item>
+        <item>Низька</item>
+        <item>Середня</item>
+        <item>Висока</item>
+        <item>Дуже висока</item>
+    </string-array>
 </resources>
