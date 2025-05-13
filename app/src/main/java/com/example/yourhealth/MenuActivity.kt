@@ -55,12 +55,20 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val reactionTestButton = findViewById<Button>(R.id.reactionTestButton)
+
+        val goToReactionTestActivity = View.OnClickListener {
+            val intent = Intent(this, ReactionTestActivity::class.java)
+            startActivity(intent)
+        }
+
         profileIcon.setOnClickListener(goToUserActivity)
         profileText.setOnClickListener(goToUserActivity)
         calcHeartRateButton.setOnClickListener(goToHeartRateCalcActivity)
         pressureButton.setOnClickListener(goToPressureCalcActivity)
         calcBmrButton.setOnClickListener(goToBmrCalcActivity)
         calcCaloriesButton.setOnClickListener(goToCaloriesCalcActivity)
+        reactionTestButton.setOnClickListener(goToReactionTestActivity)
 
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         supportActionBar?.hide()
