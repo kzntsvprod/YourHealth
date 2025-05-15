@@ -220,13 +220,7 @@
             android:id="@+id/activitySpinner"
             android:layout_width="215dp"
             android:layout_height="50dp"
-            android:background="@drawable/spinner_background"
-            android:dropDownHorizontalOffset="10dp"
-            android:dropDownVerticalOffset="10dp"
-            android:entries="@array/activity_levels"
-            android:paddingRight="40dp"
-            android:popupBackground="@color/white"
-            android:spinnerMode="dropdown" />
+            android:paddingRight="40dp" />
     </LinearLayout>
 
     <Button

@@ -15,6 +15,7 @@ import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.auth.FirebaseAuth
+import android.widget.ArrayAdapter
 
 class CaloriesCalcActivity : AppCompatActivity() {
 
@@ -41,6 +42,17 @@ class CaloriesCalcActivity : AppCompatActivity() {
         val weightInput = findViewById<EditText>(R.id.weightInput)
         val heightInput = findViewById<EditText>(R.id.heightInput)
         val activitySpinner = findViewById<Spinner>(R.id.activitySpinner)
+
+        val activityLevels = resources.getStringArray(R.array.activity_levels)
+
+        val adapter = ArrayAdapter(
+            this,
+            R.layout.spinner_item,
+            activityLevels
+        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        activitySpinner.adapter = adapter
+
 
         val calculateButton = findViewById<Button>(R.id.calcButton)
         val resultText = findViewById<TextView>(R.id.caloriesCalcInput)
