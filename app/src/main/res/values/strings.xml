@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">YourHealth</string>
+    <string name="app_name">Healthy</string>
 
     <string-array name="activity_levels">
         <item>Мінімальна</item>
