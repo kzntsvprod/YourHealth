@@ -12,6 +12,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import android.graphics.Color
+import android.widget.Toast
 import kotlin.random.Random
 
 class ReactionTestActivity : AppCompatActivity() {
@@ -34,7 +35,6 @@ class ReactionTestActivity : AppCompatActivity() {
             finish()
         }
 
-        // Переход до UserActivity при натисканні на іконку або текст
         val profileIcon = findViewById<ImageView>(R.id.profileIcon)
         val profileText = findViewById<TextView>(R.id.profileText)
 
@@ -48,10 +48,15 @@ class ReactionTestActivity : AppCompatActivity() {
         }
 
         reactionButton.setOnClickListener {
-            if (!canClick) {
-                startTest()
-            } else {
+            if (canClick) {
                 recordReaction()
+            } else {
+                val currentColor = reactionButton.backgroundTintList?.defaultColor
+                if (currentColor == Color.GRAY) {
+                    Toast.makeText(this, "Зачекай!", Toast.LENGTH_SHORT).show()
+                } else {
+                    startTest()
+                }
             }
         }
 
@@ -63,7 +68,6 @@ class ReactionTestActivity : AppCompatActivity() {
     }
 
     private fun startTest() {
-        // Reset UI
         canClick = false
         reactionInput.text = ""
         reactionButton.backgroundTintList = ColorStateList.valueOf(Color.GRAY)
